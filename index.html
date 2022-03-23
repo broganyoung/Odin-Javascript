@@ -2,12 +2,12 @@
 
 <html>
 
-    <script type = "text/javascript" src = "script.js">
-    </script>
+    <script type = "text/javascript" src = "script.js"></script>
 
     <head>  
 
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
         
         <title>
             Odin Javascript
@@ -16,9 +16,49 @@
     </head>
 
     <body>
-        <button onclick = "gamePlay()">
-            Play Rock, Paper, Scissors
-        </button>
+        <inner-column>
+
+            <player-diptych>
+
+                <picture>
+                    <img id = "computerImagePath" src="images/rock.png" alt="$todo">
+                </picture>
+
+            </player-diptych>
+
+            <player-diptych>
+
+                <picture>
+                    <img src="images/rock.png" alt="$todo">
+                    <button onclick = "gamePlay('rock')">
+                        Rock
+                    </button>
+                </picture>
+
+                <picture>
+                    <img src="images/paper.png" alt="$todo">
+                    <button onclick = "gamePlay('paper')">
+                        Paper
+                    </button>
+                </picture>
+
+                <picture>
+                    <img src="images/scissors.png" alt="$todo">
+                    <button onclick = "gamePlay('scissors')">
+                        Scissors
+                    </button>
+                </picture>
+
+            </player-diptych>
+
+            <p id = "gameMessage">Click a button to play</p>
+    
+            <p id = "games">0</p>
+            <p id = "wins">0</p>
+            <p id = "draws">0</p>
+            <p id = "losses">0</p>
+
+        </inner-column>
     </body>
 
 </html>
