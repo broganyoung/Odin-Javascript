@@ -3,10 +3,13 @@ let draws = 0
 let losses = 0
 let wins = 0
 let gameMessage = ""
+let computerMessage = ""
+let effectMessage = ""
 
 function gamePlay(inputMove){
 
     let moves = ["rock", "paper", "scissors"]
+    let effects = ["It's not very effective.", "It's super effective!"]
 
     function computerPlay(){
         let moveN = Math.floor(Math.random() * 3)
@@ -21,30 +24,9 @@ function gamePlay(inputMove){
 
     let playerMove = inputMove
 
-    let computerImagePath = ""
+    computerImagePath = "images/" + computerMove + ".png"
 
-    for (let i = 0; i < 3; i++){
-
-        for (let j = 0; j < 3; j++) {
-            
-            computerImagePath = "images/" + moves[j] + ".png"
-        
-            document.getElementById("computerImagePath").src = computerImagePath
-            console.log(computerImagePath)
-    
-        }
-
-    }    
-    
-    for (let j = 0; j < (3 - moveN); j++) {
-            
-        computerImagePath = "images/" + moves[j] + ".png"
-    
-        document.getElementById("computerImagePath").src = computerImagePath
-        console.log(computerImagePath)
-
-    }
-    console.log(computerMove)
+    document.getElementById("computerImagePath").src = computerImagePath
 
     let winner = "null"
 
@@ -90,24 +72,30 @@ function gamePlay(inputMove){
 
     if (winner == "draw"){
         gameMessage = "It's a draw!"
+        effectMessage = ""
         draws++
     }
     else if (winner == "computer"){
         gameMessage = "You lose! " + computerMove + " beats " + playerMove
+        effectMessage = effects[1]
         losses++
     }
     else if (winner == "player"){
         gameMessage = "You win! " + playerMove + " beats " + computerMove
+        effectMessage = effects[0]
         wins++
     }
 
     games++
 
-    document.getElementById("gameMessage").innerHTML = gameMessage;
+    computerMessage = "The computer chose " + computerMove + "! " + effectMessage
 
-    document.getElementById("games").innerHTML = games;
-    document.getElementById("wins").innerHTML = wins;
-    document.getElementById("draws").innerHTML = draws;
-    document.getElementById("losses").innerHTML = losses;
+    document.getElementById("gameMessage").innerHTML = gameMessage;
+    document.getElementById("computerMessage").innerHTML = computerMessage;
+
+    document.getElementById("games").innerHTML = "Total games: " + games;
+    document.getElementById("wins").innerHTML = "Total wins: " + wins;
+    document.getElementById("draws").innerHTML = "Total draws: " + draws;
+    document.getElementById("losses").innerHTML = "Total losses: " + losses;
     
 }

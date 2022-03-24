@@ -16,47 +16,67 @@
     </head>
 
     <body>
-        <inner-column>
+        <inner-column class = "game">
 
-            <player-diptych>
+            <header>
+                <h1 class = "header-voice">
+                    Rock, Paper, Scissors!
+                </h1>
+            </header>
+
+            <computer-diptych>
 
                 <picture>
-                    <img id = "computerImagePath" src="images/rock.png" alt="$todo">
+                    <img id = "computerImagePath" src="images/question.png" alt="$todo">
                 </picture>
 
-            </player-diptych>
+            </computer-diptych>
+
+            <computerMessage>
+                <h1 id = "computerMessage" class = "message-voice">
+                    What will the computer choose?
+                </h1>
+            </computerMessage>
 
             <player-diptych>
 
                 <picture>
                     <img src="images/rock.png" alt="$todo">
-                    <button onclick = "gamePlay('rock')">
-                        Rock
-                    </button>
+                    <figcaption class = "caption-voice">
+                        <button onclick = "gamePlay('rock')">
+                            Rock
+                        </button>
+                    </figcaption>
                 </picture>
 
                 <picture>
                     <img src="images/paper.png" alt="$todo">
+                    <figcaption class = "caption-voice">
                     <button onclick = "gamePlay('paper')">
                         Paper
                     </button>
+                </figcaption>
                 </picture>
 
                 <picture>
                     <img src="images/scissors.png" alt="$todo">
+                    <figcaption class = "caption-voice">
                     <button onclick = "gamePlay('scissors')">
                         Scissors
                     </button>
+                </figcaption>
                 </picture>
 
             </player-diptych>
 
-            <p id = "gameMessage">Click a button to play</p>
+            <p id = "gameMessage" class = "message-voice">Click a button to play</p>
     
-            <p id = "games">0</p>
-            <p id = "wins">0</p>
-            <p id = "draws">0</p>
-            <p id = "losses">0</p>
+            <score>
+                <p id = "games">Total games: 0</p>
+                <p id = "wins">Total wins: 0</p>
+                <p id = "draws">Total draws: 0</p>
+                <p id = "losses">Total loses: 0</p>
+            </score>
 
         </inner-column>
     </body>
